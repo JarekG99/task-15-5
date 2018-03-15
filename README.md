@@ -1,2 +1,2 @@
-# task-15-5
-Refactoryzacja
+# task-14-8
+Gif loader

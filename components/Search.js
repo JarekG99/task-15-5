@@ -6,6 +6,9 @@ Search = React.createClass({
     };
   },
 
+  resetForm: function()  {
+ document.getElementById('input').textContent = '';
+},
 
   handleChange: function(event) {
     var searchingText = event.target.value;
@@ -14,6 +17,7 @@ Search = React.createClass({
     if (searchingText.length > 2) {
       this.props.onSearch(searchingText);
     }
+
   },
 
   handleKeyUp: function(event) {
@@ -29,12 +33,17 @@ Search = React.createClass({
             maxWidth: '350px'
         };
 
-    return <input
+    return (
+            <input
+             id="input"
              type="text"
              onChange={this.handleChange}
-             placeholder="Tutaj wpisz wyszukiwaną frazę"
+             placeholder="Write what you want..."
              style={styles}
-             value={this.state.searchTerm}
+             value={this.state.searchingText}
+             onMouseOver={this.resetForm}
+
             />
+          );
   }
 });

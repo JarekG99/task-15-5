@@ -7,7 +7,7 @@ Search = React.createClass({
   },
 
   resetForm: function()  {
- document.getElementById('input').textContent = '';
+    this.setState({searchingText: ''});
 },
 
   handleChange: function(event) {
